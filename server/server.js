@@ -16,7 +16,14 @@ const allowedOrigins = ['https://authenticate12.netlify.app/']
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({origin: allowedOrigins,credentials :true}))
+app.use(
+    cors({
+      origin: allowedOrigins,
+      credentials: true,
+      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+      allowedHeaders: "Content-Type,Authorization",
+    })
+  );
 
 
 
